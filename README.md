@@ -6,11 +6,16 @@
 
 ## 📌 Project Overview
 
-This project is a web-based *Complaint Management System (CMS)* developed using *JSP, **Jakarta EE (Servlets), **MySQL, and **Apache Tomcat. It is part of the Advanced API Development individual assignment and demonstrates key enterprise web development concepts including **role-based access, **form-based synchronous interactions, and the **MVC pattern*.
+The **Complaint Management System (CMS)** is a web-based application developed using **JSP, Jakarta EE (Servlets), MySQL, and Apache Tomcat**. It is part of the **Advanced API Development (IJSE 72)** individual assignment and demonstrates key enterprise web development concepts including:
 
-The system enables two roles:
-- *Employee*: Can submit, view, update, or delete their own complaints (if unresolved).
-- *Admin*: Can view all complaints, update complaint statuses with remarks, and delete any complaint.
+- **Role-based access**
+- **Form-based synchronous interactions**
+- **MVC architecture**
+
+### User Roles
+
+- **Employee**: Can submit, view, update, or delete their own complaints (if unresolved).
+- **Admin**: Can view all complaints, update complaint statuses with remarks, and delete any complaint.
 
 ---
 
@@ -18,14 +23,16 @@ The system enables two roles:
 
 ### 🧑 Employee
 - ✅ Register & log in
-- ✅ Submit new complaints
+- ✅ Submit new complaints via **Complaint Form**
 - ✅ View list of submitted complaints
 - ✅ Edit or delete complaints (if not resolved or in progress)
+- ![Employee Complaint](web/view/images/Employee%20Complaint.png)
 
 ### 👨‍💼 Admin
 - ✅ Log in with admin credentials
-- ✅ View all complaints from all users
+- ✅ View **All Complaints** submitted by all users
 - ✅ Update complaint status and add remarks
+- ✅ **Admin Dashboard**: Quick overview of complaints and statistics
 
 ### 🔒 Security & UX
 - 🔐 Session management to restrict unauthorized access
@@ -33,67 +40,37 @@ The system enables two roles:
 - ❌ No AJAX used (strict GET/POST via forms only)
 - 🌐 MVC-compliant, modular code
 
+---
+
+## 🖼 Screenshots / Demo
+
+| Feature | Screenshot                                                      |
+|---------|-----------------------------------------------------------------|
+| **Admin Dashboard** | ![Admin Dashboard](web/view/images/Admin%20Dashboard.png)       |
+| **All Complaints** | ![All Complaints](web/view/images/All%20Compaints.png)          |
+| **Complaint Form** | ![Complaint Form](web/view/images/Complaint%20form.png)         |
+| **Employee Complaint** | ![Employee Complaint](web/view/images/Employee%20Complaint.png) |
+
+**YouTube Demo Video**:  
+[![Watch Demo](https://img.youtube.com/vi/7zMqkyEsu80/0.jpg)](https://www.youtube.com/watch?v=7zMqkyEsu80)
+
+---
+
 ## 🛠 Technologies Used
 
-| Category       | Tools/Technologies                |
+| Category       | Tools / Technologies               |
 |----------------|-----------------------------------|
 | Language       | Java 21                           |
 | Web            | JSP, Servlets, HTML, CSS          |
-| DB Access      | MySQL, JDBC, Apache Commons DBCP  |
+| Database       | MySQL, JDBC, Apache Commons DBCP  |
 | Architecture   | MVC (Model-View-Controller)       |
 | Server         | Apache Tomcat 9+                  |
 | Validation     | JavaScript                        |
 | Alerts         | SweetAlert2                       |
 | Versioning     | Git + GitHub                      |
-| Build          | Maven                             |
+| Build Tool     | Maven                             |
 
 ---
 
 ## 🧱 Project Directory Structure
 
-- *Complaint_Management_System/*
-  - *src/*
-    - *controller/* &nbsp;&nbsp;# Servlets for handling requests
-    - *dao/* &nbsp;&nbsp;# DAO classes for DB access
-    - *model/* &nbsp;&nbsp;# POJOs / JavaBeans
-    - *util/* &nbsp;&nbsp;# DBCP config and utilities
-  - *web/*
-    - *WEB-INF/* &nbsp;&nbsp;# Web app config files
-    - *web.xml* &nbsp;&nbsp;# Deployment descriptor
-    - *view/* &nbsp;&nbsp;# JSP files (views)
-    - *css/* &nbsp;&nbsp;# Styling
-    - *js/* &nbsp;&nbsp;# JS for validation and SweetAlert
-  - *db/*
-    - *schema.sql* &nbsp;&nbsp;# MySQL schema dump
-  - *README.md*
-  - *pom.xml*
-
-## ⚙ Setup and Configuration Guide
-
-### 📋 Prerequisites
-
-- Java 11+
-- Apache Tomcat 9+
-- MySQL 8 or newer
-- Git
-- IDE (e.g., IntelliJ IDEA / Eclipse)
--  Maven
-
-### 🧪 Installation & Run Instructions
-
-```bash
-# 1. Clone the project
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-
-# 2. Import the database schema into MySQL
-mysql -u root -p < db/schema.sql
-
-# 3. Configure DB connection
-Edit DBCPDataSource.java with your DB credentials
-
-# 4. Deploy to Apache Tomcat (via WAR or IDE integration)
-
-# 5. Run
-Access the system at:
-http://localhost:8080/cms-jsp-project/
